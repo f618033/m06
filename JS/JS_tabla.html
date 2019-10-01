@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script language="javascript">
+    
+    function pintarTabla(dimension, numerica, caracter) {
+        let cabezera = '<h3>Ejercicio pintar tabla</h3><p>'
+        let tableHTML = cabezera + '<table class="table table-primary table-hover">'
+            let cont = 1;
+        for (let index=0; index < dimension; index++) {
+            tableHTML += '<tr>'
+            for (let index=0; index < dimension; index++) {
+                tableHTML += '<td style="text-align:center">'
+                    if (numerica == 1){
+                        tableHTML += cont
+                    } else {
+                        tableHTML += caracter;
+                    }
+                tableHTML += '</td>';
+                cont++;
+            }
+            tableHTML += '</tr>'
+        }
+        tableHTML += '</table>'
+        return tableHTML;
+    }
+    
+
+let dim = parseInt(prompt("Indica dimension"))
+let num = parseInt(prompt("Es numerica? (1-SI, 0-NO)"))
+if (num==1){
+    document.write(pintarTabla(dim,num))
+} else {
+    let car = prompt("Con que caracter?")
+    document.write(pintarTabla(dim,num, car))
+}
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

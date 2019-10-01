@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script language="javascript">
+
+    //INICIO JAVASCRIPTS
+
+    function contarDigits_1(n) {
+        let numString = n.toString()
+        let total = numString.length
+        return total
+        }
+
+    function contarDigits_2(n) {
+        console.log("antes del FOR n=" + n);
+        let iteracions = 0
+        for (i = 1; n>10 ; i++) {
+            n = parseInt(n/10)
+            console.log("iteracion i=" + i + " n=" + n)
+            iteracions = i +1;
+        }
+        return iteracions;
+    }
+
+    //function recursivo (n)
+    function contarDigits_3(n) {
+
+        let iteraciones
+        if (n<10) {
+            iteraciones =1;
+            console.log("CASO BASE n<10 =" + iteraciones + " n=" + n)
+        } else {
+            n = parseInt(n/10)
+            console.log("antes de la llamada " + iteraciones + " n=" + n)
+            iteraciones = 1 + contarDigits_3(n);
+            console.log("despues de la llamada " + iteraciones + " n=" + n)
+        }
+        return iteraciones;
+    }
+
+
+
+
+    let num = parseInt(prompt("Indica un numero"))
+    document.write("con toString -> " + contarDigits_1(num) + "<br>")
+    document.write("con bucle FOR-> " + contarDigits_2(num) + "<br>");
+    console.log("----BUCLe IF----")
+    document.write("con iteraciones IF/ELSE -> " + contarDigits_3(num));
+
+
+
+
+    //FINAL JAVASCRIPT -> INICIO HTML
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
